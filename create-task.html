@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management Application - Create Task</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Task Manager</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="create-task.html">Create Task</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.html">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Include the navbar from layout.html -->
+
+    <div class="container mt-4">
+        <h1>Create New Task</h1>
+        
+        <form>
+            <div class="mb-3">
+                <label for="taskTitle" class="form-label">Task Title</label>
+                <input type="text" class="form-control" id="taskTitle" required>
+            </div>
+            <div class="mb-3">
+                <label for="taskDescription" class="form-label">Task Description</label>
+                <textarea class="form-control" id="taskDescription" rows="3" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="taskStatus" class="form-label">Task Status</label>
+                <select class="form-select" id="taskStatus" required>
+                    <option value="">Select status</option>
+                    <option value="pending">Pending</option>
+                    <option value="in-progress">In Progress</option>
+                    <option value="completed">Completed</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="taskDueDate" class="form-label">Due Date</label>
+                <input type="date" class="form-control" id="taskDueDate" required>
+            </div>
+            <div class="mb-3">
+                <label for="taskPriority" class="form-label">Priority</label>
+                <div class="input-group">
+                    <select class="form-select" id="taskPriority" required>
+                        <option value="">Select priority</option>
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                    <span class="input-group-text">
+                        <span class="badge bg-secondary" id="priorityBadge"></span>
+                    </span>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Create Task</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Simple script to update the priority badge
+        document.getElementById('taskPriority').addEventListener('change', function() {
+            const badge = document.getElementById('priorityBadge');
+            badge.textContent = this.value;
+            badge.className = 'badge bg-' + (this.value === 'high' ? 'danger' : this.value === 'medium' ? 'warning' : 'info');
+        });
+    </script>
+</body>
+</html>

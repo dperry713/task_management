@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management Application - Task Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Task Manager</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="create-task.html">Create Task</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.html">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Include the navbar from layout.html -->
+
+    <div class="container mt-4">
+        <h1>Task Details</h1>
+        
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Task Title <span class="badge bg-primary">In Progress</span></h5>
+                <p class="card-text">Detailed description of the task goes here.</p>
+                
+                <form>
+                    <div class="mb-3">
+                        <label for="taskTitle" class="form-label">Task Title</label>
+                        <input type="text" class="form-control" id="taskTitle" value="Current Task Title">
+                    </div>
+                    <div class="mb-3">
+                        <label for="taskDescription" class="form-label">Task Description</label>
+                        <textarea class="form-control" id="taskDescription" rows="3">Current task description</textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="taskStatus" class="form-label">Task Status</label>
+                        <select class="form-select" id="taskStatus">
+                            <option value="pending
+                            <option value="pending">Pending</option>
+                            <option value="in-progress" selected>In Progress</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="taskDueDate" class="form-label">Due Date</label>
+                        <input type="date" class="form-control" id="taskDueDate" value="2023-05-01">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update Task</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
